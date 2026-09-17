@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="ahmet" Host="ahmet-IdeaPad-Gaming-3-15ACH6" Pid="7243" HostCore="12" HostMemory="14157076">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="ahmet" Host="ahmet-IdeaPad-Gaming-3-15ACH6" Pid="9738" HostCore="12" HostMemory="14157076">
+    </Process>
+</ProcessHandle>

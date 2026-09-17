@@ -1,0 +1,27 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 16-sep-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Wed Sep 16 20:10:05 2026
+# Process ID         : 10196
+# Current directory  : /home/ahmet/Desktop/photonic-inference-lab
+# Command line       : vivado
+# Log file           : /home/ahmet/Desktop/photonic-inference-lab/vivado.log
+# Journal file       : /home/ahmet/Desktop/photonic-inference-lab/vivado.jou
+# Running On         : ahmet-IdeaPad-Gaming-3-15ACH6
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.5 LTS
+# Processor Detail   : AMD Ryzen 5 5600H with Radeon Graphics
+# CPU Frequency      : 3320.807 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 14496 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 18791 MB
+# Available Virtual  : 13895 MB
+#-----------------------------------------------------------
+start_gui
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 16 20:15:53 2026...
