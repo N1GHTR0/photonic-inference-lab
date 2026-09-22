@@ -22,14 +22,361 @@ VL_INLINE_OPT void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) 
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.pe__DOT__clk = vlSelfRef.clk;
-    vlSelfRef.pe__DOT__rst = vlSelfRef.rst;
-    vlSelfRef.pe__DOT__en = vlSelfRef.en;
-    vlSelfRef.pe__DOT__a_in = vlSelfRef.a_in;
-    vlSelfRef.pe__DOT__b_in = vlSelfRef.b_in;
-    vlSelfRef.a_out = vlSelfRef.pe__DOT__a_out;
-    vlSelfRef.b_out = vlSelfRef.pe__DOT__b_out;
-    vlSelfRef.acc = vlSelfRef.pe__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__a_in[0U] = vlSelfRef.a_in
+        [0U];
+    vlSelfRef.systolic_array_4x4__DOT__a_in[1U] = vlSelfRef.a_in
+        [1U];
+    vlSelfRef.systolic_array_4x4__DOT__a_in[2U] = vlSelfRef.a_in
+        [2U];
+    vlSelfRef.systolic_array_4x4__DOT__a_in[3U] = vlSelfRef.a_in
+        [3U];
+    vlSelfRef.systolic_array_4x4__DOT__b_in[0U] = vlSelfRef.b_in
+        [0U];
+    vlSelfRef.systolic_array_4x4__DOT__b_in[1U] = vlSelfRef.b_in
+        [1U];
+    vlSelfRef.systolic_array_4x4__DOT__b_in[2U] = vlSelfRef.b_in
+        [2U];
+    vlSelfRef.systolic_array_4x4__DOT__b_in[3U] = vlSelfRef.b_in
+        [3U];
+    vlSelfRef.systolic_array_4x4__DOT__clk = vlSelfRef.clk;
+    vlSelfRef.systolic_array_4x4__DOT__rst = vlSelfRef.rst;
+    vlSelfRef.systolic_array_4x4__DOT__en = vlSelfRef.en;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[0U][0U] 
+        = vlSelfRef.a_in[0U];
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[1U][0U] 
+        = vlSelfRef.a_in[1U];
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[2U][0U] 
+        = vlSelfRef.a_in[2U];
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[3U][0U] 
+        = vlSelfRef.a_in[3U];
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[0U][0U] 
+        = vlSelfRef.b_in[0U];
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[0U][1U] 
+        = vlSelfRef.b_in[1U];
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[0U][2U] 
+        = vlSelfRef.b_in[2U];
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[0U][3U] 
+        = vlSelfRef.b_in[3U];
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[1U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[0U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[1U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[0U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[1U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[0U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[1U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[0U][4U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[2U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[1U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[2U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[1U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[2U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[1U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[2U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[1U][4U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[3U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[2U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[3U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[2U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[3U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[2U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[3U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[2U][4U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[4U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[3U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[4U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[3U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[4U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[3U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[4U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[3U][4U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[0U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[0U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[0U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[0U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[1U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[1U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[1U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[1U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[2U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[2U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[2U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[2U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[3U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[3U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[3U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[3U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__clk 
+        = vlSelfRef.systolic_array_4x4__DOT__clk;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__rst 
+        = vlSelfRef.systolic_array_4x4__DOT__rst;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__en 
+        = vlSelfRef.systolic_array_4x4__DOT__en;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [0U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [0U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [0U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [0U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [1U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [1U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [1U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [1U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [2U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [2U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [2U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [2U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [3U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [3U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [3U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [3U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [0U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [0U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [0U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [0U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [1U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [1U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [1U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [1U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [2U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [2U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [2U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [2U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [3U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [3U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [3U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [3U][3U];
+    vlSelfRef.c_out[0U][0U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [0U][0U];
+    vlSelfRef.c_out[0U][1U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [0U][1U];
+    vlSelfRef.c_out[0U][2U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [0U][2U];
+    vlSelfRef.c_out[0U][3U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [0U][3U];
+    vlSelfRef.c_out[1U][0U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [1U][0U];
+    vlSelfRef.c_out[1U][1U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [1U][1U];
+    vlSelfRef.c_out[1U][2U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [1U][2U];
+    vlSelfRef.c_out[1U][3U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [1U][3U];
+    vlSelfRef.c_out[2U][0U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [2U][0U];
+    vlSelfRef.c_out[2U][1U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [2U][1U];
+    vlSelfRef.c_out[2U][2U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [2U][2U];
+    vlSelfRef.c_out[2U][3U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [2U][3U];
+    vlSelfRef.c_out[3U][0U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [3U][0U];
+    vlSelfRef.c_out[3U][1U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [3U][1U];
+    vlSelfRef.c_out[3U][2U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [3U][2U];
+    vlSelfRef.c_out[3U][3U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [3U][3U];
 }
 
 void Vtop___024root___eval_triggers__ico(Vtop___024root* vlSelf);
@@ -72,28 +419,666 @@ VL_INLINE_OPT void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) 
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Init
-    SData/*15:0*/ __Vdly__pe__DOT__acc;
-    __Vdly__pe__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = 0;
+    SData/*15:0*/ __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = 0;
     // Body
-    __Vdly__pe__DOT__acc = vlSelfRef.pe__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
     if (vlSelfRef.rst) {
-        __Vdly__pe__DOT__acc = 0U;
-        vlSelfRef.pe__DOT__a_out = 0U;
-        vlSelfRef.pe__DOT__b_out = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = 0U;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out = 0U;
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out = 0U;
     } else if (vlSelfRef.en) {
-        __Vdly__pe__DOT__acc = (0xffffU & ((IData)(vlSelfRef.pe__DOT__acc) 
-                                           + VL_MULS_III(16, 
-                                                         (0xffffU 
-                                                          & VL_EXTENDS_II(16,8, (IData)(vlSelfRef.a_in))), 
-                                                         (0xffffU 
-                                                          & VL_EXTENDS_II(16,8, (IData)(vlSelfRef.b_in))))));
-        vlSelfRef.pe__DOT__a_out = vlSelfRef.a_in;
-        vlSelfRef.pe__DOT__b_out = vlSelfRef.b_in;
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [0U]
+                                                             [0U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [0U]
+                                                       [0U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [0U]
+                                                             [1U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [0U]
+                                                       [1U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [0U]
+                                                             [2U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [0U]
+                                                       [2U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [0U]
+                                                             [3U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [0U]
+                                                       [3U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [1U]
+                                                             [0U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [1U]
+                                                       [0U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [1U]
+                                                             [1U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [1U]
+                                                       [1U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [1U]
+                                                             [2U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [1U]
+                                                       [2U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [1U]
+                                                             [3U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [1U]
+                                                       [3U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [2U]
+                                                             [0U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [2U]
+                                                       [0U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [2U]
+                                                             [1U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [2U]
+                                                       [1U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [2U]
+                                                             [2U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [2U]
+                                                       [2U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [2U]
+                                                             [3U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [2U]
+                                                       [3U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [3U]
+                                                             [0U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [3U]
+                                                       [0U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [3U]
+                                                             [1U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [3U]
+                                                       [1U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [3U]
+                                                             [2U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [3U]
+                                                       [2U])))));
+        __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+            = (0xffffU & ((IData)(vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc) 
+                          + VL_MULS_III(16, (0xffffU 
+                                             & VL_EXTENDS_II(16,8, 
+                                                             vlSelfRef.systolic_array_4x4__DOT__a_wire
+                                                             [3U]
+                                                             [3U])), 
+                                        (0xffffU & 
+                                         VL_EXTENDS_II(16,8, 
+                                                       vlSelfRef.systolic_array_4x4__DOT__b_wire
+                                                       [3U]
+                                                       [3U])))));
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [0U][0U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [0U][0U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [0U][1U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [0U][1U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [0U][2U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [0U][2U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [0U][3U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [0U][3U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [1U][0U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [1U][0U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [1U][1U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [1U][1U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [1U][2U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [1U][2U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [1U][3U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [1U][3U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [2U][0U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [2U][0U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [2U][1U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [2U][1U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [2U][2U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [2U][2U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [2U][3U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [2U][3U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [3U][0U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [3U][0U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [3U][1U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [3U][1U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [3U][2U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [3U][2U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out 
+            = vlSelfRef.systolic_array_4x4__DOT__a_wire
+            [3U][3U];
+        vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out 
+            = vlSelfRef.systolic_array_4x4__DOT__b_wire
+            [3U][3U];
     }
-    vlSelfRef.pe__DOT__acc = __Vdly__pe__DOT__acc;
-    vlSelfRef.acc = vlSelfRef.pe__DOT__acc;
-    vlSelfRef.a_out = vlSelfRef.pe__DOT__a_out;
-    vlSelfRef.b_out = vlSelfRef.pe__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc 
+        = __Vdly__systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[0U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[0U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[0U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[0U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[1U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[1U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[1U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[1U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[2U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[2U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[2U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[2U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[3U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[3U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[3U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__c_out[3U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[0U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[1U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[0U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[1U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[0U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[1U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[0U][4U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[1U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[1U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[2U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[1U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[2U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[1U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[2U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[1U][4U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[2U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[2U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[3U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[2U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[3U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[2U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[3U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[2U][4U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[3U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[3U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[4U][0U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[3U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[4U][1U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[3U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[4U][2U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.systolic_array_4x4__DOT__a_wire[3U][4U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out;
+    vlSelfRef.systolic_array_4x4__DOT__b_wire[4U][3U] 
+        = vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out;
+    vlSelfRef.c_out[0U][0U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [0U][0U];
+    vlSelfRef.c_out[0U][1U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [0U][1U];
+    vlSelfRef.c_out[0U][2U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [0U][2U];
+    vlSelfRef.c_out[0U][3U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [0U][3U];
+    vlSelfRef.c_out[1U][0U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [1U][0U];
+    vlSelfRef.c_out[1U][1U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [1U][1U];
+    vlSelfRef.c_out[1U][2U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [1U][2U];
+    vlSelfRef.c_out[1U][3U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [1U][3U];
+    vlSelfRef.c_out[2U][0U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [2U][0U];
+    vlSelfRef.c_out[2U][1U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [2U][1U];
+    vlSelfRef.c_out[2U][2U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [2U][2U];
+    vlSelfRef.c_out[2U][3U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [2U][3U];
+    vlSelfRef.c_out[3U][0U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [3U][0U];
+    vlSelfRef.c_out[3U][1U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [3U][1U];
+    vlSelfRef.c_out[3U][2U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [3U][2U];
+    vlSelfRef.c_out[3U][3U] = vlSelfRef.systolic_array_4x4__DOT__c_out
+        [3U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [0U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [0U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [0U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [0U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [1U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [1U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [1U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [1U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [2U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [2U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [2U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [2U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [3U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [3U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [3U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in 
+        = vlSelfRef.systolic_array_4x4__DOT__a_wire
+        [3U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [0U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [0U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [0U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [0U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [1U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [1U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [1U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [1U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [2U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [2U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [2U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [2U][3U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [3U][0U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [3U][1U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [3U][2U];
+    vlSelfRef.systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in 
+        = vlSelfRef.systolic_array_4x4__DOT__b_wire
+        [3U][3U];
 }
 
 void Vtop___024root___eval_triggers__act(Vtop___024root* vlSelf);
@@ -159,7 +1144,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__ico(vlSelf);
 #endif
-            VL_FATAL_MT("/home/ahmet/Desktop/photonic-inference-lab/fpga/systolic_array_4x4/tb/../rtl/pe.sv", 1, "", "Input combinational region did not converge.");
+            VL_FATAL_MT("/home/ahmet/Desktop/photonic-inference-lab/fpga/systolic_array_4x4/tb/../rtl/systolic_array_4x4.sv", 1, "", "Input combinational region did not converge.");
         }
         __VicoIterCount = ((IData)(1U) + __VicoIterCount);
         __VicoContinue = 0U;
@@ -175,7 +1160,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__nba(vlSelf);
 #endif
-            VL_FATAL_MT("/home/ahmet/Desktop/photonic-inference-lab/fpga/systolic_array_4x4/tb/../rtl/pe.sv", 1, "", "NBA region did not converge.");
+            VL_FATAL_MT("/home/ahmet/Desktop/photonic-inference-lab/fpga/systolic_array_4x4/tb/../rtl/systolic_array_4x4.sv", 1, "", "NBA region did not converge.");
         }
         __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
         __VnbaContinue = 0U;
@@ -186,7 +1171,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__act(vlSelf);
 #endif
-                VL_FATAL_MT("/home/ahmet/Desktop/photonic-inference-lab/fpga/systolic_array_4x4/tb/../rtl/pe.sv", 1, "", "Active region did not converge.");
+                VL_FATAL_MT("/home/ahmet/Desktop/photonic-inference-lab/fpga/systolic_array_4x4/tb/../rtl/systolic_array_4x4.sv", 1, "", "Active region did not converge.");
             }
             vlSelfRef.__VactIterCount = ((IData)(1U) 
                                          + vlSelfRef.__VactIterCount);

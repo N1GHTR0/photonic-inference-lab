@@ -46,7 +46,7 @@ VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__stl(vlSelf);
 #endif
-            VL_FATAL_MT("/home/ahmet/Desktop/photonic-inference-lab/fpga/systolic_array_4x4/tb/../rtl/pe.sv", 1, "", "Settle region did not converge.");
+            VL_FATAL_MT("/home/ahmet/Desktop/photonic-inference-lab/fpga/systolic_array_4x4/tb/../rtl/systolic_array_4x4.sv", 1, "", "Settle region did not converge.");
         }
         __VstlIterCount = ((IData)(1U) + __VstlIterCount);
         __VstlContinue = 0U;
@@ -154,18 +154,168 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->clk = VL_RAND_RESET_I(1);
     vlSelf->rst = VL_RAND_RESET_I(1);
     vlSelf->en = VL_RAND_RESET_I(1);
-    vlSelf->a_in = VL_RAND_RESET_I(8);
-    vlSelf->b_in = VL_RAND_RESET_I(8);
-    vlSelf->a_out = VL_RAND_RESET_I(8);
-    vlSelf->b_out = VL_RAND_RESET_I(8);
-    vlSelf->acc = VL_RAND_RESET_I(16);
-    vlSelf->pe__DOT__clk = VL_RAND_RESET_I(1);
-    vlSelf->pe__DOT__rst = VL_RAND_RESET_I(1);
-    vlSelf->pe__DOT__en = VL_RAND_RESET_I(1);
-    vlSelf->pe__DOT__a_in = VL_RAND_RESET_I(8);
-    vlSelf->pe__DOT__b_in = VL_RAND_RESET_I(8);
-    vlSelf->pe__DOT__a_out = VL_RAND_RESET_I(8);
-    vlSelf->pe__DOT__b_out = VL_RAND_RESET_I(8);
-    vlSelf->pe__DOT__acc = VL_RAND_RESET_I(16);
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+        vlSelf->a_in[__Vi0] = VL_RAND_RESET_I(8);
+    }
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+        vlSelf->b_in[__Vi0] = VL_RAND_RESET_I(8);
+    }
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+        for (int __Vi1 = 0; __Vi1 < 4; ++__Vi1) {
+            vlSelf->c_out[__Vi0][__Vi1] = VL_RAND_RESET_I(16);
+        }
+    }
+    vlSelf->systolic_array_4x4__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__en = VL_RAND_RESET_I(1);
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+        vlSelf->systolic_array_4x4__DOT__a_in[__Vi0] = VL_RAND_RESET_I(8);
+    }
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+        vlSelf->systolic_array_4x4__DOT__b_in[__Vi0] = VL_RAND_RESET_I(8);
+    }
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+        for (int __Vi1 = 0; __Vi1 < 4; ++__Vi1) {
+            vlSelf->systolic_array_4x4__DOT__c_out[__Vi0][__Vi1] = VL_RAND_RESET_I(16);
+        }
+    }
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+        for (int __Vi1 = 0; __Vi1 < 5; ++__Vi1) {
+            vlSelf->systolic_array_4x4__DOT__a_wire[__Vi0][__Vi1] = VL_RAND_RESET_I(8);
+        }
+    }
+    for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {
+        for (int __Vi1 = 0; __Vi1 < 4; ++__Vi1) {
+            vlSelf->systolic_array_4x4__DOT__b_wire[__Vi0][__Vi1] = VL_RAND_RESET_I(8);
+        }
+    }
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__rst = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__en = VL_RAND_RESET_I(1);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_in = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__a_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__b_out = VL_RAND_RESET_I(8);
+    vlSelf->systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__acc = VL_RAND_RESET_I(16);
     vlSelf->__Vtrigprevexpr___TOP__clk__0 = VL_RAND_RESET_I(1);
 }

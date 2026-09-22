@@ -7,7 +7,23 @@
 #include "Vtop___024root.h"
 
 // Parameter definitions for Vtop___024root
-constexpr IData/*31:0*/ Vtop___024root::pe__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__0__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__1__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__2__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__0__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__1__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__2__KET____DOT__pe_inst__DOT__WIDTH;
+constexpr IData/*31:0*/ Vtop___024root::systolic_array_4x4__DOT__g_row__BRA__3__KET____DOT__g_col__BRA__3__KET____DOT__pe_inst__DOT__WIDTH;
 
 
 void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf);
