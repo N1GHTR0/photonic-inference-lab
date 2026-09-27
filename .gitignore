@@ -27,3 +27,4 @@ __pycache__/
 *.out
 *.toc
 *.synctex.gz
+fpga/systolic_soc/build/
