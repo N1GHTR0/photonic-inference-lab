@@ -1,12 +1,13 @@
 module systolic_array_4x4 #(
-    parameter int WIDTH = 8
+    parameter int WIDTH     = 8,
+    parameter int ACC_WIDTH = 32
 ) (
-    input  logic                     clk,
-    input  logic                     rst,
-    input  logic                     en,
-    input  logic signed [WIDTH-1:0]  a_in [0:3],
-    input  logic signed [WIDTH-1:0]  b_in [0:3],
-    output logic signed [2*WIDTH-1:0] c_out [0:3][0:3]
+    input  logic                         clk,
+    input  logic                         rst,
+    input  logic                         en,
+    input  logic signed [WIDTH-1:0]      a_in [0:3],
+    input  logic signed [WIDTH-1:0]      b_in [0:3],
+    output logic signed [ACC_WIDTH-1:0]  c_out [0:3][0:3]
 );
 
     logic signed [WIDTH-1:0] a_wire [0:3][0:4];
@@ -25,7 +26,7 @@ module systolic_array_4x4 #(
     generate
         for (i = 0; i < 4; i++) begin : g_row
             for (j = 0; j < 4; j++) begin : g_col
-                pe #(.WIDTH(WIDTH)) pe_inst (
+                pe #(.WIDTH(WIDTH), .ACC_WIDTH(ACC_WIDTH)) pe_inst (
                     .clk   (clk),
                     .rst   (rst),
                     .en    (en),

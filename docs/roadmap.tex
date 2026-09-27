@@ -1,0 +1,730 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Paketler ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% babel-turkish yoksa (texlive-lang-european) İngilizce'ye düşer
+\IfFileExists{turkish.ldf}
+    {\usepackage[shorthands=off,turkish]{babel}}
+    {\usepackage[english]{babel}}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{hyperref}
+
+% --- Sayfa Düzeni ---
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% --- Renkler ---
+\definecolor{primary}{RGB}{20, 60, 120}
+\definecolor{secondary}{RGB}{200, 80, 20}
+\definecolor{codebg}{RGB}{245, 245, 245}
+\definecolor{notebg}{RGB}{255, 250, 230}
+\definecolor{warnbg}{RGB}{255, 235, 235}
+\definecolor{successbg}{RGB}{235, 255, 240}
+
+% --- Başlık Formatları ---
+\titleformat{\section}{\Large\bfseries\color{primary}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{secondary}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% --- Kod Listeleme ---
+% literate: pdflatex altında listings içindeki Türkçe karakterler için
+\lstset{
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    tabsize=2,
+    captionpos=b,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate={ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {ğ}{{\u{g}}}1 {Ğ}{{\u{G}}}1
+             {ı}{{\i}}1 {İ}{{\.{I}}}1 {ö}{{\"o}}1 {Ö}{{\"O}}1
+             {ş}{{\c{s}}}1 {Ş}{{\c{S}}}1 {ü}{{\"u}}1 {Ü}{{\"U}}1
+             {→}{{$\rightarrow$}}1 {×}{{$\times$}}1
+}
+
+% --- tcolorbox Tanımları ---
+\newtcolorbox{notebox}[1][]{colback=notebg, colframe=orange!70!black, title=#1,
+    fonttitle=\bfseries, boxrule=0.5pt, arc=2mm}
+\newtcolorbox{warnbox}[1][]{colback=warnbg, colframe=red!70!black, title=#1,
+    fonttitle=\bfseries, boxrule=0.5pt, arc=2mm}
+\newtcolorbox{successbox}[1][]{colback=successbg, colframe=green!50!black, title=#1,
+    fonttitle=\bfseries, boxrule=0.5pt, arc=2mm}
+
+% --- Header/Footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{primary}{Fotonik AI Hızlandırıcı — Yol Haritası}}
+\fancyhead[R]{\small\textcolor{primary}{\thepage}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% --- Hyperref Ayarları ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=secondary,
+    citecolor=primary,
+    pdftitle={Fotonik AI Hızlandırıcı Yol Haritası},
+    pdfsubject={4 Yıllık Teknik ve Stratejik Plan}
+}
+
+% --- Başlık Bilgileri ---
+\title{
+    \vspace{-2cm}
+    \Huge\textbf{\textcolor{primary}{Fotonik AI Hızlandırıcı}}\\[0.5cm]
+    \Large\textbf{\textcolor{secondary}{4 Yıllık Uçtan Uca Yol Haritası}}\\[0.3cm]
+    \large Dijital + Fotonik Hibrit Matris Çarpım Hızlandırıcısı\\[0.5cm]
+    \normalsize\textit{Arty Z7-10 (Zynq-7010) Tabanlı Solo Geliştirme Planı}\\[0.2cm]
+    \normalsize Revizyon 2 — Eylül 2026
+}
+\author{\textbf{Inference Engineer}}
+\date{\today}
+
+% ============================================================
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\vspace{1cm}
+
+\begin{center}
+\begin{tcolorbox}[colback=primary!10, colframe=primary, width=0.9\textwidth, arc=3mm]
+\centering
+\large\textit{``Ben bir çip fabrikası kurmuyorum.\\ Ben iki kişilik bir deep-tech stüdyosuyum.\\ Önce fikrin sayılarla işe yaradığını gösteririm,\\ sonra silikona para harcarım.''}
+\end{tcolorbox}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{notebox}[Revizyon 2'de Neler Değişti?]
+\begin{itemize}[leftmargin=*,nosep]
+    \item Donanım Arty Z7-20 değil, \textbf{Arty Z7-10 (xc7z010clg400-1)} olarak düzeltildi; PYNQ yerine ARM + AXI-Lite akışı.
+    \item Sistem clock'u 125 MHz olarak düzeltildi (H16 pini).
+    \item Efabless 2025'te kapandığı için ChipIgnite çıkarıldı, açık MPW alternatifleri eklendi.
+    \item MZI matematiği düzeltildi (karmaşık 2$\times$2 unitary + SVD + Clements mesh).
+    \item RISC-V çıkarıldı (Zynq'te zaten ARM var).
+    \item Yıl 1'e \textbf{fotonik matmul gürültü/kuantizasyon simülatörü} ve \textbf{GPU baseline} eklendi.
+    \item Her çeyreğe \textbf{go/no-go kriteri} eklendi.
+    \item Kaynağı doğrulanamayan pazar/yetenek rakamları çıkarıldı.
+    \item Gün gün plan, gerçekte tamamlanan işlerle (Hafta 1--2) değiştirildi.
+\end{itemize}
+\end{notebox}
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Vizyon ve Stratejik Konumlandırma}
+
+\subsection{Neden Fotonik? Neden Şimdi?}
+
+Modern yapay zeka sistemlerinde darboğaz giderek hesaplamadan \textbf{veri hareketine} kayıyor: bakır bağlantıların bant genişliği, gecikmesi ve bit başına enerjisi (bellek duvarı ve I/O darboğazı). Bu yüzden iki fotonik yön öne çıkıyor:
+
+\begin{itemize}
+    \item \textbf{Optik bağlantı (optical I/O, Co-Packaged Optics):} Çipler arası veri taşımayı ışıkla yapmak. Ticari olarak daha olgun.
+    \item \textbf{Optik hesaplama:} Matris çarpımını girişim (interference) ile analog olarak yapmak. Daha riskli, daha az olgun.
+\end{itemize}
+
+\begin{notebox}[Pazar Verisi — Kaynak Eklenecek]
+Fon başvurularında kullanılacak pazar büyüklüğü rakamları (CPO pazar tahminleri vb.) \textbf{birincil kaynaktan} (analist raporu, şirket duyurusu) alınıp tarih ve bağlantısıyla buraya eklenmeli. Doğrulanamayan bir rakam, başvurunun geri kalanının güvenilirliğini de düşürür.
+\end{notebox}
+
+\subsection{Rekabet Ortamı}
+
+\begin{warnbox}[Uyarı: Rekabet Yoğun]
+Bu alan ``boş arazi'' değil, iyi fonlanmış şirketlerin olduğu bir arena. Kazanma şansın \textbf{odaklı, çevik ve niş} olmaktan geçiyor.
+\end{warnbox}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{3cm}p{2cm}p{9cm}@{}}
+\toprule
+\textbf{Şirket} & \textbf{Bölge} & \textbf{Odak} \\
+\midrule
+Lightmatter & ABD & Fotonik bağlantı (interconnect) ve fotonik hesaplama \\
+Ayar Labs & ABD & Optik I/O chiplet'leri \\
+Lightelligence & Çin & Optik hesaplama ve optik bağlantı \\
+Neurophos & ABD & Metasurface tabanlı optik hesaplama \\
+\bottomrule
+\end{tabular}
+\caption{Fotonik AI alanındaki bazı oyuncular. Fon ve değerleme rakamları birincil kaynaktan doğrulanıp eklenecek.}
+\end{table}
+
+\subsection{Senin Nişin}
+
+\textbf{Onların yaklaşımı:} Genel amaçlı, büyük ölçekli optik işlemciler veya bağlantı çözümleri.
+
+\textbf{Senin fırsatın:} Inference mühendisliği geçmişin (GPU inference, GenAI görüntü/video modelleri) sana şu soruyu sorduruyor:
+
+\begin{center}
+\large\textit{``Tüm modeli optik yapmak zorunda mıyız? Yoksa sadece en çok enerji tüketen belirli bir katmanı (örneğin Attention veya belirli bir MatMul) optik olarak hızlandırsak yeterli olmaz mı?''}
+\end{center}
+
+Bu soru \textbf{önce simülasyonla, sayılarla} cevaplanmalı (Bölüm~\ref{sec:simulator}). Cevap olumluysa donanıma yatırım yapılır; olumsuzsa hedef erkenden, ucuza değiştirilir.
+
+% ============================================================
+\section{Durum Analizi ve Varlıklar}
+
+\subsection{Elimizdeki Donanım: Arty Z7-10}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{5.2cm}p{9cm}@{}}
+\toprule
+\textbf{Özellik} & \textbf{Senin İçin Anlamı} \\
+\midrule
+Zynq-7010 SoC (çift çekirdek ARM Cortex-A9 + FPGA) & Yazılım (C) ile donanımı (RTL) aynı çipte, AXI üzerinden birleştirebilirsin. \\
+FPGA: 17.600 LUT, 35.200 FF & Küçük kontrol mantığı ve wrapper'lar için yeterli. \\
+80 DSP48E1 & 8$\times$8 INT8 systolic array'e kadar (64 DSP) sığar; 4$\times$4 dizi 16 DSP kullanıyor. \\
+60 BRAM36 ($\sim$2,1 Mb) & Matris tile'ları için yerel tampon. \\
+512 MB DDR3 (16-bit) & ARM tarafı için ana bellek. \\
+125 MHz PL clock (H16 pini) & XDC'de \texttt{-period 8.00} olmalı. \\
+XADC (12-bit, 1 MSPS) & Fotodetektörden yavaş/DC ölçüm ve kalibrasyon için yeterli; gerçek zamanlı yüksek hızlı okuma için harici ADC gerekir. \\
+\bottomrule
+\end{tabular}
+\caption{Arty Z7-10'un projeye katkısı}
+\end{table}
+
+\begin{warnbox}[PYNQ Z7-10'da Resmi Olarak Desteklenmiyor]
+Resmi PYNQ imajları PYNQ-Z1/Z2 gibi Zynq-7020 kartları içindir; Arty Z7-10'daki 7010 için hazır imaj yok. Bu yüzden plan \textbf{Vivado block design (ZYNQ7 PS + AXI-Lite) + Vitis bare-metal C} akışına göre yazıldı. Linux + Python gerekirse ileride PetaLinux veya topluluk PYNQ port'u değerlendirilebilir.
+\end{warnbox}
+
+\begin{notebox}[DAC Eksikliği]
+Kartta XADC (giriş) var ama \textbf{DAC (çıkış) yok}. Fotonik çipteki faz kaydırıcıları sürmek için harici bir DAC gerekecek. Termal faz kaydırıcılar yavaş (DC'ye yakın) sürüldüğü için ilk aşamada çok kanallı, düşük hızlı bir DAC (ör. Pmod DA4) yeterli; yüksek hızlı modülatörler için ayrı bir çözüm gerekir.
+\end{notebox}
+
+\subsection{Takım Yapısı}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{2cm}p{6cm}p{6cm}@{}}
+\toprule
+\textbf{Dönem} & \textbf{Sen (Solo)} & \textbf{Kuzenin (Yarı Zamanlı)} \\
+\midrule
+1. yıl & RTL + systolic array + AXI + simülatör + Tiny Tapeout & Dersler + yaz tatilinde gdsfactory/SAX \\
+2. yıl & DAC/ADC arayüzü + ASIC (açık MPW) & Fotonik dersleri + MZI mesh simülasyonu \\
+3. yıl & Sürücü ASIC + hibrit mimari & İlk PIC layout + üniversite laboratuvarı \\
+4. yıl & Sistem entegrasyonu + demo + fon & Mezuniyet projesi + tam zamanlı katılım \\
+\bottomrule
+\end{tabular}
+\caption{4 yıllık rol dağılımı}
+\end{table}
+
+% ============================================================
+\section{4 Yıllık Yol Haritası}
+
+\subsection{Yıl 1 (Eylül 2026 -- Ağustos 2027): Dijital Temel + Fikrin Doğrulanması}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{1.6cm}p{5.2cm}p{5cm}p{2.4cm}@{}}
+\toprule
+\textbf{Çeyrek} & \textbf{Dijital} & \textbf{Fotonik / Simülasyon} & \textbf{Çıktı} \\
+\midrule
+Q1 \newline Eyl--Kas & 4$\times$4 systolic array + cocotb (\checkmark), AXI-Lite wrapper, ARM'dan test & gdsfactory + SAX ile ilk MZI, 2$\times$2 transfer matrisi & Kartta çalışan matmul \\
+Q2 \newline Ara--Şub & Seri yüklemeli dizi (Tiny Tapeout I/O'suna uygun), GPU baseline (CuTe/CUTLASS) & Gürültü + kuantizasyon simülatörü, Clements mesh ile SVD matmul & Simülatör raporu \\
+Q3 \newline Mar--May & XADC + DAC arayüz prototipi & Gerçek bir katmanı (attention/MLP) simülatörde çalıştır & \textbf{Go/no-go kararı} \\
+Q4 \newline Haz--Ağu & \textbf{Tiny Tapeout başvurusu} & PIC mimari spesifikasyonu & İlk dijital çip tasarımı \\
+\bottomrule
+\end{tabular}
+\caption{Yıl 1 yol haritası}
+\end{table}
+
+\subsection{Yıl 2 (2027--2028): Fotonik Tarafa Geçiş}
+
+\begin{itemize}
+    \item Tiny Tapeout çipi geldiğinde test et, test PCB'si tasarla.
+    \item DAC/ADC + fotonik arayüz mimarisini kur.
+    \item \textbf{İlk ASIC tape-out} (açık MPW; bkz. Bölüm~\ref{sec:mpw}).
+    \item \textbf{İlk PIC tape-out} (fotonik MPW; bkz. Bölüm~\ref{sec:mpw}).
+\end{itemize}
+
+\subsection{Yıl 3 (2028--2029): Entegrasyon}
+
+\begin{itemize}
+    \item Sürücü çipini test et, hataları düzelt, ikinci revizyonu planla.
+    \item PIC'i test et, optik kayıpları ölç, kalibrasyon rutinleri yaz.
+    \item İki çipi aynı PCB'de birleştirme denemesi (MCM).
+\end{itemize}
+
+\subsection{Yıl 4 (2029--2030): Demo + Fon}
+
+\begin{itemize}
+    \item Küçük bir DiT/UNet katmanını hibrit sistemde çalıştır.
+    \item Yıl 1'de ölçülen GPU baseline'ına karşı benchmark yap.
+    \item TÜBİTAK BİGG, EIC Accelerator, YC gibi fonlara başvur.
+    \item Kuzenin mezun olur, tam zamanlı katılır.
+\end{itemize}
+
+\subsection{Tape-Out Seçenekleri}
+\label{sec:mpw}
+
+\begin{warnbox}[Efabless Kapandı]
+Efabless 2025'te faaliyetlerini durdurdu; \textbf{ChipIgnite artık bir seçenek değil}. Aşağıdaki seçeneklerin güncel durumu, fiyatı ve takvimi başvurudan önce kontrol edilmeli.
+\end{warnbox}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{3.5cm}p{3cm}p{7.5cm}@{}}
+\toprule
+\textbf{Seçenek} & \textbf{Tür} & \textbf{Not} \\
+\midrule
+Tiny Tapeout & Dijital, çok küçük & Yıl 1 hedefi. Az I/O pini, küçük alan, sınırlı I/O hızı. \\
+IHP açık MPW & Dijital (SG13G2) & Açık PDK, akademik/açık kaynak projeler için. \\
+wafer.space & Dijital (GF180MCU) & Düşük maliyetli açık PDK çalıştırmaları. \\
+Europractice & Dijital + fotonik & Akademik erişim; üniversite üzerinden daha uygun. \\
+Cornerstone (UK) & Silikon fotonik & Akademik odaklı fotonik MPW. \\
+AIM Photonics (ABD) & Silikon fotonik & Daha pahalı, olgun PDK. \\
+\bottomrule
+\end{tabular}
+\caption{Tape-out seçenekleri (güncel durumu kontrol edilecek)}
+\end{table}
+
+% ============================================================
+\section{Go/No-Go Kriterleri}
+
+Solo çalışmanın en büyük riski, yanlış bir yolda aylarca ilerlemek. Her çeyrek sonunda aşağıdaki sorulara \textbf{ölçülmüş sayılarla} cevap verilir. Eşik değerleri başlangıç önerisidir; simülatör sonuçlarına göre güncellenir.
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{1.6cm}p{6.4cm}p{6cm}@{}}
+\toprule
+\textbf{Ne zaman} & \textbf{Kriter} & \textbf{Karşılanmazsa} \\
+\midrule
+Q1 sonu & ARM'dan gönderilen rastgele 4$\times$4 INT8 matrisler, yazılım referansıyla \%100 aynı sonucu veriyor & Q2'ye geçme, hata ayıkla \\
+Q2 sonu & Simülatör, bilinen sonuçları (ideal durumda hatasız matmul) tekrar üretiyor & Model doğrulanmadan sonuçlara güvenme \\
+Q3 sonu & Hedef katmanda, gerçekçi analog hassasiyetle (ör. 6 bit) doğruluk kaybı kabul edilebilir (ör. \textless\%1) \textbf{ve} tahmini pJ/MAC, GPU baseline'ından daha iyi & Hedef katmanı veya optik hedefini değiştir (ör. optik bağlantıya odaklan) \\
+Q4 sonu & Tiny Tapeout tasarımı gate-level simülasyonu ve tüm kontrolleri geçiyor & Bir sonraki shuttle'a kaydır \\
+\bottomrule
+\end{tabular}
+\caption{Çeyreklik go/no-go kriterleri}
+\end{table}
+
+% ============================================================
+\section{Tamamlananlar ve Sıradaki Adımlar}
+
+\subsection{Hafta 1 (Eylül 2026): Ortam + İlk RTL}
+
+\begin{itemize}
+    \item Vivado 2026.1 (Linux) kuruldu, Digilent board dosyaları eklendi.
+    \item Kartın Z7-20 değil \textbf{Z7-10} olduğu JTAG IDCODE ile anlaşıldı; proje yeniden oluşturuldu.
+    \item \texttt{led\_blink.sv} sentez $\rightarrow$ implementation $\rightarrow$ bitstream $\rightarrow$ FPGA: LED yanıp sönüyor.
+    \item FTDI udev kuralı ve GitHub token sorunları çözüldü.
+\end{itemize}
+
+\subsection{Hafta 2: 4$\times$4 INT8 Systolic Array}
+
+\begin{itemize}
+    \item PE modülü + cocotb testi (Verilator).
+    \item 4$\times$4 output-stationary systolic array; 16/16 sonuç doğru.
+    \item \texttt{use\_dsp} attribute'u sinyal bildirimine taşındı: her PE tek bir DSP48E1 MAC'e oturdu (16 DSP, 0 LUT, 8 FF).
+    \item Out-of-context sentez: IOB sorunu olmadan kaynak ve timing tahmini; 100 MHz'de WNS +7,995 ns (I/O yolları henüz kısıtlanmadı).
+\end{itemize}
+
+\textbf{Güncel PE modülü} (hedef: akümülatör 32 bit):
+
+\begin{lstlisting}[language=Verilog]
+module pe #(
+    parameter int WIDTH     = 8,
+    parameter int ACC_WIDTH = 32   // 16 bit K>1 için taşabilir
+) (
+    input  logic                        clk,
+    input  logic                        rst,
+    input  logic                        en,
+    input  logic signed [WIDTH-1:0]     a_in,
+    input  logic signed [WIDTH-1:0]     b_in,
+    output logic signed [WIDTH-1:0]     a_out,
+    output logic signed [WIDTH-1:0]     b_out,
+    output logic signed [ACC_WIDTH-1:0] acc
+);
+    (* use_dsp = "yes" *) logic signed [2*WIDTH-1:0] mult;
+    assign mult = a_in * b_in;
+
+    always_ff @(posedge clk) begin
+        if (rst) begin
+            a_out <= '0;
+            b_out <= '0;
+            acc   <= '0;
+        end else if (en) begin
+            a_out <= a_in;
+            b_out <= b_in;
+            acc   <= acc + mult;
+        end
+    end
+endmodule
+\end{lstlisting}
+
+\begin{warnbox}[Akümülatör Taşması]
+INT8$\times$INT8 çarpımın en büyük değeri $(-128)\times(-128)=16384$. K=4 için toplam 65536'ya ulaşabilir; bu int16 sınırını (32767) aşar. Gerçek INT8 hızlandırıcılar INT32 akümülatör kullanır. DSP48E1'in P çıkışı zaten 48 bit olduğu için ek kaynak gerekmez.
+\end{warnbox}
+
+\subsection{Hafta 3--4: Sıradaki Adımlar}
+
+\begin{enumerate}
+    \item \textbf{Küçük düzeltmeler:} XDC'de clock'u 125 MHz yap, \texttt{acc}'yi 32 bit yap, cocotb testlerine en kötü durum (taşma) testi ekle.
+    \item \textbf{I/O kısıtları:} OOC akışında \texttt{set\_input\_delay}/\texttt{set\_output\_delay} ekleyip implementation sonrası gerçek timing'i al.
+    \item \textbf{AXI-Lite wrapper:} A (16 byte), B (16 byte), start/done ve C (16$\times$4 byte) register haritası.
+    \item \textbf{Block design:} ZYNQ7 Processing System + AXI-Lite wrapper; bitstream + XSA export.
+    \item \textbf{Vitis bare-metal test:} ARM'dan rastgele matrisler yaz, C'yi oku, yazılım referansıyla karşılaştır.
+    \item \textbf{Fotonik hat:} \texttt{photonic/} klasörünü aç, gdsfactory ile ilk MZI, SAX ile transfer matrisi.
+\end{enumerate}
+
+\textbf{LED blink (125 MHz clock için düzeltilmiş):}
+
+\begin{lstlisting}[language=Verilog]
+module led_blink (
+    input  logic clk,   // 125 MHz, H16
+    input  logic rst,
+    output logic led
+);
+    // 125e6 / 2 = 62_500_000 -> 0,5 s'de bir toggle (1 Hz yanıp sönme)
+    localparam int unsigned HALF_PERIOD = 62_500_000;
+    logic [26:0] counter;
+
+    always_ff @(posedge clk) begin
+        if (rst) begin
+            counter <= '0;
+            led     <= 1'b0;
+        end else if (counter == HALF_PERIOD - 1) begin
+            counter <= '0;
+            led     <= ~led;
+        end else begin
+            counter <= counter + 1;
+        end
+    end
+endmodule
+\end{lstlisting}
+
+% ============================================================
+\section{Fotonik Matmul Simülatörü}
+\label{sec:simulator}
+
+Yıl 1'in en önemli çıktısı. Amaç, tape-out'a para harcamadan önce şu soruları \textbf{sayılarla} cevaplamak:
+
+\begin{itemize}
+    \item Gerçekçi analog hassasiyetle (faz hatası, dedektör gürültüsü, DAC/ADC bit derinliği) hedef katmanın doğruluğu ne kadar düşüyor?
+    \item DAC/ADC ve lazer dahil toplam enerji, GPU'daki aynı GEMM'e göre pJ/MAC olarak nerede?
+    \item Hangi katman optik, hangisi dijital kalmalı?
+\end{itemize}
+
+\begin{notebox}[Neden Önemli?]
+Fotonik hesaplamada zorluk çoğu zaman optik çarpmanın kendisinde değil, \textbf{elektro-optik dönüşümde}: DAC/ADC enerjisi ve sınırlı analog hassasiyet. Bu yüzden simülatör DAC/ADC'yi de modellemeli.
+\end{notebox}
+
+\textbf{İlk yaklaşım (PyTorch):}
+
+\begin{lstlisting}[language=Python]
+import torch
+
+def quantize(x, bits, xmax):
+    # Simetrik uniform kuantizasyon (DAC/ADC modeli)
+    levels = 2 ** (bits - 1) - 1
+    step = xmax / levels
+    return torch.clamp(torch.round(x / step), -levels, levels) * step
+
+def photonic_matmul(x, W, dac_bits=6, adc_bits=6,
+                    weight_noise=0.01, det_noise=0.01):
+    # 1) Giriş DAC ile kodlanır
+    x_q = quantize(x, dac_bits, x.abs().max())
+    # 2) Ağırlıklar faz hatası nedeniyle bozulur (birinci derece yaklaşım;
+    #    sonraki adım: Clements mesh fazlarına doğrudan gürültü eklemek)
+    W_n = W * (1 + weight_noise * torch.randn_like(W))
+    y = x_q @ W_n.T
+    # 3) Fotodetektör gürültüsü
+    y = y + det_noise * y.abs().max() * torch.randn_like(y)
+    # 4) Çıkış ADC ile okunur
+    return quantize(y, adc_bits, y.abs().max())
+\end{lstlisting}
+
+Sonraki adımlar: ağırlık gürültüsünü doğrudan MZI fazlarında modellemek (Clements mesh), optik kayıp ve lazer gücünü eklemek, bir DiT attention/MLP katmanında \texttt{torch.nn.Linear}'ı bu fonksiyonla değiştirip doğruluk kaybını ölçmek.
+
+\subsection{GPU Baseline}
+
+Aynı GEMM boyutları için CuTe/CUTLASS ile GPU'da latency, throughput ve (mümkünse güç ölçümüyle) pJ/MAC değerleri Yıl 1 Q2'de ölçülür. Bu, Yıl 4 benchmark'ının referans çizgisidir.
+
+% ============================================================
+\section{Fotonik Öğrenme Yol Haritası}
+
+\subsection{Inference Engineer İçin Eşleştirme}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{5cm}p{9cm}@{}}
+\toprule
+\textbf{Bildiğin (AI/Inference)} & \textbf{Fotonikte Karşılığı} \\
+\midrule
+MatMul (GEMM) & MZI mesh ile analog matris çarpımı (SVD) \\
+Quantization (INT8/FP8) & DAC/ADC bit derinliği, faz kaydırıcı çözünürlüğü \\
+Bellek duvarı & Elektro-optik dönüşüm maliyeti, optik kayıp \\
+Kernel fusion & Fotonik bileşenleri tek çipte birleştirme (PIC) \\
+Graph partitioning & Hangi katman optik, hangisi dijital? \\
+Latency/throughput & Optik gecikme vs elektronik gecikme \\
+Enerji bütçesi & Lazer gücü, modülatör enerjisi, fotodetektör gürültüsü \\
+\bottomrule
+\end{tabular}
+\caption{AI bilgisinden fotonik bilgisine köprü}
+\end{table}
+
+\subsection{MZI Matmul Matematiği}
+
+Bir MZI, iki faz kaydırıcısı ($\theta$: iç faz, $\phi$: dış faz) ile iki dalga kılavuzu arasında \textbf{karmaşık} bir 2$\times$2 unitary dönüşüm uygular. Clements et al. (2016) gösterimiyle:
+
+\begin{equation}
+T(\theta, \phi) = \begin{bmatrix}
+e^{i\phi}\cos\theta & -\sin\theta \\
+e^{i\phi}\sin\theta & \cos\theta
+\end{bmatrix}
+\end{equation}
+
+$N(N-1)/2$ adet MZI'dan oluşan bir mesh (Reck veya Clements dizilimi), herhangi bir $N\times N$ unitary matrisi $U$'yu gerçekleyebilir. Ancak AI ağırlık matrisleri genelde unitary değildir. Keyfi bir $W$ matrisi için \textbf{tekil değer ayrışımı (SVD)} kullanılır:
+
+\begin{equation}
+W = U \Sigma V^{\dagger}
+\end{equation}
+
+\begin{itemize}
+    \item $V^{\dagger}$ ve $U$: iki ayrı MZI mesh ile gerçeklenir.
+    \item $\Sigma$: köşegen matris; her kanalda bir zayıflatıcı (veya kazanç) ile gerçeklenir.
+\end{itemize}
+
+Bu, Shen et al. (2017) çalışmasının temelidir. Pratik sorunlar: faz hatası mesh boyunca birikir, optik kayıp $N$ ile artar ve dedektör yalnızca yoğunluk ($|E|^2$) ölçer; işaretli değerler için ek kodlama gerekir.
+
+\subsection{İlk MZI (gdsfactory)}
+
+\begin{lstlisting}[language=Python]
+import gdsfactory as gf
+
+c = gf.components.mzi(delta_length=10)
+c.write_gds("mzi_demo.gds")
+c.plot()
+\end{lstlisting}
+
+\subsection{Araç Zinciri}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{3.2cm}p{6.3cm}p{4.5cm}@{}}
+\toprule
+\textbf{Araç} & \textbf{Ne İçin?} & \textbf{Kurulum} \\
+\midrule
+gdsfactory & Python tabanlı fotonik layout & \texttt{pip install gdsfactory} \\
+SAX & Fotonik devre (S-parametre) simülasyonu & \texttt{pip install sax} \\
+Meep & FDTD simülasyonu & \texttt{conda install -c conda-forge pymeep} \\
+KLayout & GDS görüntüleme ve DRC & klayout.de \\
+PyTorch & Gürültü/kuantizasyon simülatörü & \texttt{pip install torch} \\
+Lumerical & Ticari FDTD/devre simülasyonu & Üniversite lisansı \\
+\bottomrule
+\end{tabular}
+\caption{Fotonik araç zinciri}
+\end{table}
+
+\subsection{Öğrenme Kaynakları}
+
+\begin{itemize}
+    \item L. Chrostowski, M. Hochberg, \textit{Silicon Photonics Design}, Cambridge University Press, 2015 (ve UBCx/edX kursu).
+    \item Y. Shen et al., ``Deep learning with coherent nanophotonic circuits'', \textit{Nature Photonics}, 2017.
+    \item W. R. Clements et al., ``Optimal design for universal multiport interferometers'', \textit{Optica}, 2016.
+    \item M. Reck et al., ``Experimental realization of any discrete unitary operator'', \textit{Physical Review Letters}, 1994.
+    \item gdsfactory: \url{https://gdsfactory.github.io/gdsfactory/}
+    \item SAX: \url{https://flaport.github.io/sax/}
+    \item Meep: \url{https://meep.readthedocs.io}
+    \item SiEPIC (açık kaynak fotonik tasarım araçları ve eğitimleri)
+    \item Tiny Tapeout: \url{https://tinytapeout.com}
+\end{itemize}
+
+% ============================================================
+\section{Kariyer Güvenliği}
+
+Silikon fotonik, AI veri merkezlerinin itmesiyle büyüyen bir alan ve \textbf{dijital tasarım + fotonik + AI inference} bileşimine sahip mühendis sayısı az. Bu proje, girişim başarılı olmasa bile bu bileşimi somut çıktılarla (RTL, tape-out, simülatör, benchmark) belgelemeni sağlar.
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{3.5cm}p{5cm}p{5cm}@{}}
+\toprule
+\textbf{Senaryo} & \textbf{Ne Olur?} & \textbf{Kariyer Sonucu} \\
+\midrule
+Girişim başarılı & Çip çalışır, fon bulunur & Kurucu/CTO \\
+Kısmen başarılı & Demo çalışır, ticarileşemez & Acquihire, senior mühendis \\
+Başarısız & Teknik hedefler tutmaz & Güçlü portfolyo ile büyük şirkette senior rol \\
+\bottomrule
+\end{tabular}
+\caption{Üç senaryo}
+\end{table}
+
+\begin{notebox}[Doğrulama Notu]
+Yetenek açığı ve maaş verileri fon başvurusunda kullanılacaksa, güncel ve kaynaklı veriyle (iş ilanları, sektör raporları) eklenmeli.
+\end{notebox}
+
+% ============================================================
+\section{Kritik Uyarılar ve Prensipler}
+
+\begin{warnbox}[IP Duvarı]
+Mevcut işin sana GPU mimarisi ve inference deneyimi ile maaş runway'i veriyor. Ama işverenin kodunu, modelini, altyapısını kullanma; iş bilgisayarında bu proje üzerinde çalışma. \textbf{Clean-room çalış.} Dışarıyla paylaşılan dokümanlarda işveren adı ve iç bilgiler yer almasın.
+\end{warnbox}
+
+\begin{warnbox}[İşini Hemen Bırakma]
+Akşamları ve hafta sonları bu projeye ayır. 12--18 aylık finansal plan yapmadan tam zamanlı girişimcilik seni yakar.
+\end{warnbox}
+
+\begin{warnbox}[Ortaklık Sözleşmesi]
+Kuzeninle ortaklık sözleşmesini şimdiden konuş: hisse, vesting, IP, ayrılık durumu. Aile içi ortaklıkta en büyük risk duygusal varsayımlardır.
+\end{warnbox}
+
+\begin{notebox}[Tiny Tapeout Kısıtları]
+Tiny Tapeout'ta proje başına az sayıda I/O pini (8 giriş, 8 çıkış, 8 çift yönlü), küçük alan ve sınırlı I/O hızı var. 4$\times$4 dizi FPGA'da 323 I/O istiyordu; aynı sorun orada da çıkar. Tasarım baştan \textbf{seri yükleme} (A/B'yi byte byte yükle, C'yi byte byte oku) ile yapılmalı.
+\end{notebox}
+
+\begin{notebox}[Kapsam Kayması]
+``Bir de şunu ekleyeyim'' tuzağına düşme. Her çeyrekte \textbf{tek bir somut çıktı} ve bir go/no-go kriteri belirle.
+\end{notebox}
+
+\begin{notebox}[Tıkanma Noktaları]
+1 haftadan fazla takılma. Discord (Tiny Tapeout, gdsfactory), GitHub Issues, hocalar.
+\end{notebox}
+
+% ============================================================
+\section{Bu Hafta Yapacağın 3 Şey}
+
+\begin{enumerate}
+    \item \textbf{Düzeltmeler:} XDC clock'u 125 MHz, \texttt{acc} 32 bit, taşma testi.
+    \item \textbf{AXI-Lite wrapper:} Register haritasını yaz, cocotb ile test et.
+    \item \textbf{Fotonik hattı başlat:} \texttt{photonic/} klasörü, ilk MZI, SAX transfer matrisi.
+\end{enumerate}
+
+\begin{center}
+\begin{tcolorbox}[colback=successbg, colframe=green!50!black, width=0.9\textwidth, arc=3mm]
+\centering
+\large\textbf{4 yıl sonra hedef:}\\[0.3cm]
+\textbf{FPGA'da doğrulanmış, silikona dönüşmüş ve ışıkla çarpan bir çip.}\\[0.3cm]
+\textit{İlk \texttt{always\_ff} bloğu yazıldı, 16 DSP'ye oturdu. Sıradaki: ARM'dan konuşmak.}
+\end{tcolorbox}
+\end{center}
+
+% ============================================================
+\appendix
+
+\section{Ek: Hızlı Referans Komutları}
+
+\subsection{Vivado Proje Akışı (Arty Z7-10)}
+
+\begin{lstlisting}[language=bash]
+# 1. Create Project -> RTL Project
+# 2. Boards -> Arty Z7-10 (xc7z010clg400-1)
+# 3. Add Sources -> rtl/*.sv, Add Constraints -> *.xdc
+# 4. Run Synthesis -> Run Implementation -> Generate Bitstream
+# 5. Open Hardware Manager -> Auto Connect -> Program Device
+\end{lstlisting}
+
+\subsection{Out-of-Context Sentez ve Timing (Tcl Console)}
+
+\begin{lstlisting}[language=tcl]
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} \
+    -value {-mode out_of_context} -objects [get_runs synth_1]
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+report_utilization
+report_timing_summary -max_paths 5
+\end{lstlisting}
+
+\subsection{Arty Z7 Clock Kısıtı}
+
+\begin{lstlisting}[language=tcl]
+set_property -dict { PACKAGE_PIN H16 IOSTANDARD LVCMOS33 } [get_ports { clk }]
+create_clock -add -name sys_clk_pin -period 8.00 -waveform {0 4} [get_ports { clk }]
+\end{lstlisting}
+
+\subsection{cocotb Testleri}
+
+\begin{lstlisting}[language=bash]
+cd fpga/systolic_array_4x4/tb
+make                                   # 4x4 dizi testi
+make TOPLEVEL=pe MODULE=test_pe        # tek PE testi
+\end{lstlisting}
+
+\subsection{GitHub Repo Yapısı}
+
+\begin{lstlisting}
+photonic-inference-lab/
+|-- fpga/
+|   |-- led_blink_z010/          # Vivado projesi (Hafta 1)
+|   |-- systolic_array_4x4/
+|   |   |-- rtl/                 # pe.sv, systolic_array_4x4.sv
+|   |   `-- tb/                  # cocotb testleri
+|   `-- systolic_4x4_synth/      # Vivado sentez projesi
+|-- photonic/                    # (eklenecek) gdsfactory, SAX, Meep
+|-- sim/                         # (eklenecek) fotonik matmul simülatörü
+|-- docs/
+|   |-- roadmap.tex
+|   `-- week_logs/
+`-- README.md
+\end{lstlisting}
+
+\section{Ek: 4 Yıllık Özet Takvim}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{0.8cm}p{3.4cm}p{3.4cm}p{3.4cm}p{2.6cm}@{}}
+\toprule
+\textbf{Yıl} & \textbf{Dijital Hat} & \textbf{Fotonik Hat} & \textbf{Ortak Çıktı} & \textbf{Fon} \\
+\midrule
+1 & Systolic array + AXI + Tiny Tapeout & MZI + gürültü simülatörü + GPU baseline & Go/no-go kararı + ilk dijital çip & TÜBİTAK 2209 / 1512 \\
+2 & DAC/ADC + sürücü ASIC (açık MPW) & İlk PIC tape-out + kalibrasyon & İki çip + test PCB & TÜBİTAK BİGG \\
+3 & Sürücü ASIC test + revizyon & Optik ölçüm + paketleme & Hibrit modül & KOSGEB Ar-Ge \\
+4 & Sistem entegrasyonu + benchmark & Demo & Çalışan hibrit matmul demosu & EIC Accelerator \\
+\bottomrule
+\end{tabular}
+\caption{4 yıllık özet takvim (fon programlarının uygunluk koşulları kontrol edilecek)}
+\end{table}
+
+\section{Ek: Sözlük}
+
+\begin{description}
+    \item[PIC] Photonic Integrated Circuit — Fotonik Entegre Devre
+    \item[MZI] Mach-Zehnder Interferometer — Mach-Zehnder Girişimölçeri
+    \item[SVD] Singular Value Decomposition — Tekil Değer Ayrışımı
+    \item[CPO] Co-Packaged Optics — Ko-Paketlenmiş Optik
+    \item[MPW] Multi-Project Wafer — Çoklu Proje Gofreti
+    \item[PDK] Process Design Kit — Süreç Tasarım Kiti
+    \item[OOC] Out-of-Context — I/O buffer'sız, modül seviyesinde sentez
+    \item[RTL] Register Transfer Level — Kayıt Transfer Seviyesi
+    \item[GDSII] Graphic Data System II — Layout dosya formatı
+    \item[STA] Static Timing Analysis — Statik Zaman Analizi
+    \item[WNS] Worst Negative Slack — En kötü zamanlama marjı
+    \item[DRC] Design Rule Check — Tasarım Kuralı Kontrolü
+    \item[LVS] Layout Versus Schematic — Layout-Şema Uyumu
+    \item[XADC] Xilinx Analog-to-Digital Converter
+    \item[AXI] Advanced eXtensible Interface — ARM ile FPGA arasındaki veri yolu
+    \item[FDTD] Finite-Difference Time-Domain — Sonlu Farklar Zaman Alanı
+    \item[GEMM] General Matrix Multiply — Genel Matris Çarpımı
+\end{description}
+
+\end{document}

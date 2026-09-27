@@ -1,0 +1,29 @@
+# --- Vivado: üretilen dosyalar (kaynaklar *.srcs/ ve *.xpr takip edilir) ---
+*.runs/
+*.cache/
+*.hw/
+*.gen/
+*.sim/
+*.ip_user_files/
+.Xil/
+*.jou
+*.log
+*.str
+*.backup.*
+
+# --- cocotb / Verilator ---
+sim_build/
+sim_build_*/
+results.xml
+*.vcd
+*.fst
+__pycache__/
+*.pyc
+
+# --- LaTeX ---
+*.aux
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.synctex.gz
