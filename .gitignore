@@ -28,3 +28,4 @@ __pycache__/
 *.toc
 *.synctex.gz
 fpga/systolic_soc/build/
+fpga/systolic_soc/sw/workspace/
